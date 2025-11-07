@@ -1,7 +1,7 @@
 {
   "name": "luxe-store-frontend",
   "version": "1.0.0",
-  "description": "Frontend assets for Luxe Store E-Commerce",
+  "description": "Frontend assets for GoShopping E-Commerce",
   "private": true,
   "scripts": {
     "start": "echo 'This is a Spring Boot project. Use: mvn spring-boot:run'"
