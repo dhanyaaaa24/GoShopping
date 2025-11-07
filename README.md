@@ -1,4 +1,4 @@
-# Luxe Store - E-Commerce System
+# GoShopping - E-Commerce System
 
 A modern, full-stack e-commerce application built with Java Spring Boot backend and vanilla HTML/CSS/JavaScript frontend.
 
