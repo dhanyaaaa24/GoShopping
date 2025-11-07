@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Store - Premium E-Commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="logo">
+                <h1>Luxe Store</h1>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for products...">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="nav-actions">
+                <div class="user-menu" id="userMenu">
+                    <i class="fas fa-user"></i>
+                    <span id="userText">Sign In</span>
+                </div>
+                <div class="wishlist-icon" id="wishlistIcon">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge" id="wishlistBadge">0</span>
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge" id="cartBadge">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Premium Quality</span>
+                    </div>
+                    <h1>Discover Your <span class="gradient-text">Perfect Style</span></h1>
+                    <p>Explore our curated collection of premium products designed to bring joy and elegance to your everyday life.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="shopNowBtn">
+                            <i class="fas fa-shopping-bag"></i>
+                            Shop Now
+                        </button>
+                        <button class="btn btn-secondary" id="viewWishlistBtn">
+                            <i class="fas fa-heart"></i>
+                            View Wishlist
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Happy Customers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Premium Products</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.9</div>
+                            <div class="stat-label">Customer Rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Shopping Experience">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Shop by Category</h2>
+                <p>Discover products across our carefully curated categories</p>
+            </div>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="productsSection" style="display: none;">
+        <div class="container">
+            <div class="products-header">
+                <div class="products-title">
+                    <h2 id="productsTitle">All Products</h2>
+                    <p id="productsCount">Loading products...</p>
+                </div>
+                <button class="btn btn-secondary" id="backToHomeBtn">Back to Home</button>
+            </div>
+
+            <div class="products-content">
+                <div class="filters-sidebar">
+                    <div class="filters-header">
+                        <h3><i class="fas fa-filter"></i> Filters</h3>
+                        <button class="btn-clear" id="clearFiltersBtn">Clear All</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <div class="filter-options" id="categoryFilters">
+                            <!-- Category filters will be loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-range">
+                            <input type="range" id="minPrice" min="0" max="500" value="0">
+                            <input type="range" id="maxPrice" min="0" max="500" value="500">
+                            <div class="price-labels">
+                                <span id="minPriceLabel">$0</span>
+                                <span id="maxPriceLabel">$500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Sort By</h4>
+                        <select id="sortSelect">
+                            <option value="name">Name</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <div class="trending-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Trending Now</span>
+                </div>
+                <h2>Featured Products</h2>
+                <p>Handpicked premium products that our customers love most</p>
+            </div>
+            <div class="products-grid" id="featuredProductsGrid">
+                <!-- Featured products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Auth Modal -->
+<div class="modal" id="authModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="authTitle">Get Started</h2>
+            <p id="authSubtitle">Enter your email to continue</p>
+            <button class="modal-close" id="closeAuthModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="auth-error" id="authError" style="display: none;"></div>
+
+            <!-- Email Check Form -->
+            <form id="emailCheckForm">
+                <div class="form-group">
+                    <input type="email" id="emailInput" placeholder="Enter your email address" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <button type="submit" class="btn btn-primary" id="continueBtn">
+                    <span class="btn-text">Continue</span>
+                    <div class="btn-loader" style="display: none;">
+                        <div class="spinner"></div>
+                        <span>Checking...</span>
+                    </div>
+                </button>
+            </form>
+
+            <!-- Auth Form -->
+            <form id="authForm" style="display: none;">
+                <div class="form-group" id="nameGroup" style="display: none;">
+                    <input type="text" id="nameInput" placeholder="Full Name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="emailDisplay" placeholder="Email Address" disabled>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="passwordInput" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <button type="submit" class="btn btn-primary" id="authSubmitBtn">
+                    <span class="btn-text">Sign In</span>
+                    <div class="btn-loader" style="display: none;">
+                        <div class="spinner"></div>
+                        <span>Processing...</span>
+                    </div>
+                </button>
+                <button type="button" class="btn btn-secondary" id="backToEmailBtn">Use different email</button>
+            </form>
+
+            <div class="auth-status" id="authStatus" style="display: none;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Cart Sidebar -->
+<div class="sidebar" id="cartSidebar">
+    <div class="sidebar-header">
+        <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+        <span class="item-count" id="cartItemCount">0 items</span>
+        <button class="sidebar-close" id="closeCartSidebar">&times;</button>
+    </div>
+    <div class="sidebar-content" id="cartContent">
+        <div class="empty-state" id="emptyCart">
+            <i class="fas fa-shopping-cart"></i>
+            <h4>Your cart is empty</h4>
+            <p>Discover amazing products and add them to your cart!</p>
+            <button class="btn btn-primary" id="startShoppingBtn">Start Shopping</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+    </div>
+    <div class="sidebar-footer" id="cartFooter" style="display: none;">
+        <div class="total">
+            <span>Total: <strong id="cartTotal">$0.00</strong></span>
+        </div>
+        <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+        <button class="btn btn-secondary continue-shopping" id="continueShoppingBtn">Continue Shopping</button>
+    </div>
+</div>
+
+<!-- Wishlist Sidebar -->
+<div class="sidebar" id="wishlistSidebar">
+    <div class="sidebar-header">
+        <h3><i class="fas fa-heart"></i> Wishlist</h3>
+        <span class="item-count" id="wishlistItemCount">0 items</span>
+        <button class="sidebar-close" id="closeWishlistSidebar">&times;</button>
+    </div>
+    <div class="sidebar-content" id="wishlistContent">
+        <div class="empty-state" id="emptyWishlist">
+            <i class="fas fa-heart"></i>
+            <h4>Your wishlist is empty</h4>
+            <p>Save items you love to your wishlist!</p>
+            <button class="btn btn-primary" id="startBrowsingBtn">Start Shopping</button>
+        </div>
+        <div class="wishlist-items" id="wishlistItems"></div>
+    </div>
+    <div class="sidebar-footer" id="wishlistFooter" style="display: none;">
+        <button class="btn btn-secondary continue-browsing" id="continueBrowsingBtn">Continue Shopping</button>
+    </div>
+</div>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay" style="display: none;">
+    <div class="spinner-large"></div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
