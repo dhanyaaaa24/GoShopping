@@ -2,8 +2,10 @@
 
 A modern, full-stack e-commerce application built with Java Spring Boot backend and vanilla HTML/CSS/JavaScript frontend.
 
-![Home Page]("https://github.com/user-attachments/assets/d8d240be-55d3-487c-a1d1-9ae4b5a621ed")
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d8d240be-55d3-487c-a1d1-9ae4b5a621ed" alt="Home Page-GoShopping" width="800">
+</p>
 
 ## Features
 
