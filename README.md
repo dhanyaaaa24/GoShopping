@@ -59,7 +59,7 @@ A modern, full-stack e-commerce application built with Java Spring Boot backend 
    ```bash
    mvn spring-boot:run
    ```
-4. Access the application at `http://localhost:8080`
+4. Access the application at `http://localhost:8080/api/`
 
 ### Default Configuration
 - Server runs on port 8080
